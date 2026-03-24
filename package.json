@@ -2,9 +2,9 @@
   "name": "star-prime-md-ultra",
   "version": "1.0.0",
   "description": "STAR-PRIME-MD-ULTRA WhatsApp Bot",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.0",
