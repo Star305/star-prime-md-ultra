@@ -2,8 +2,11 @@ const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLat
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 
-// ====================== YOUR HANDLER ======================
-const Handler = require('./main')   // ← Your big handler file (main.js)
+// Load settings
+require('./settings')
+
+// Load your main handler
+const Handler = require('./main')
 
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState('./session')
@@ -29,7 +32,7 @@ async function startBot() {
                 console.log('🔄 Connection closed. Reconnecting...')
                 startBot()
             } else {
-                console.log('❌ Logged out. Delete the "session" folder and restart.')
+                console.log('❌ Logged out. Delete session folder and restart.')
             }
         }
 
@@ -40,7 +43,7 @@ async function startBot() {
 
     // ===================== PAIRING CODE =====================
     if (!sock.authState.creds.registered) {
-        const phoneNumber = '2349060245012'   // ← CHANGE TO YOUR NUMBER (without +)
+        const phoneNumber = '2349060245012'   // ← Your new number
 
         const code = await sock.requestPairingCode(phoneNumber)
         
@@ -48,13 +51,14 @@ async function startBot() {
         console.log('🔥 YOUR PAIRING CODE:')
         console.log(`   ${code}`)
         console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        console.log('→ Open WhatsApp → Linked Devices → Link a Device')
-        console.log('→ Enter the code above\n')
+        console.log('1. Open WhatsApp on your phone')
+        console.log('2. Go to Linked Devices')
+        console.log('3. Tap "Link a Device"')
+        console.log('4. Enter the code above\n')
     }
 
     sock.ev.on('creds.update', saveCreds)
 
-    // ===================== LOAD YOUR HANDLER =====================
     sock.ev.on('messages.upsert', async (chatUpdate) => {
         try {
             const m = chatUpdate.messages[0]
