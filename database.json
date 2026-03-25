@@ -1,0 +1,66 @@
+{
+  "users": {
+    "2349060245012@s.whatsapp.net": {
+      "limit": 100,
+      "money": 50000,
+      "vip": true,
+      "premium": false,
+      "ban": false,
+      "afkTime": -1,
+      "afkReason": "",
+      "lastClaim": 0
+    },
+    "145917739024404@s.whatsapp.net": {
+      "limit": 100,
+      "money": 50000,
+      "vip": true,
+      "premium": false,
+      "ban": false,
+      "afkTime": -1,
+      "afkReason": "",
+      "lastClaim": 0
+    }
+  },
+  "groups": {},
+  "hit": {
+    "total": 0
+  },
+  "sewa": [],
+  "premium": [],
+  "set": {
+    "public": true,
+    "grouponly": false,
+    "privateonly": false,
+    "autoread": true,
+    "autobio": true,
+    "autotyping": true,
+    "antispam": true,
+    "multiprefix": true,
+    "autobackup": true,
+    "status": 0
+  },
+  "game": {
+    "suit": {},
+    "chess": {},
+    "chat_ai": {},
+    "menfes": {},
+    "tekateki": {},
+    "akinator": {},
+    "tictactoe": {},
+    "tebaklirik": {},
+    "kuismath": {},
+    "blackjack": {},
+    "tebaklagu": {},
+    "tebakkata": {},
+    "family100": {},
+    "susunkata": {},
+    "tebakbom": {},
+    "ulartangga": {},
+    "tebakkimia": {},
+    "caklontong": {},
+    "tebakangka": {},
+    "tebaknegara": {},
+    "tebakgambar": {},
+    "tebakbendera": {}
+  }
+}
